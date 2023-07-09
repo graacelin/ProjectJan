@@ -9,7 +9,7 @@ public class SoundSettings : MonoBehaviour
 
     private void Start()
     {
-        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 100));
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 20));
     }
     
     public void SetVolume(float _value) 
