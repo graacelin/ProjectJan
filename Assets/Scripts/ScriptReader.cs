@@ -11,6 +11,7 @@ public class ScriptReader : MonoBehaviour
 
     public TextMeshProUGUI textComponent;
     public Timer timer;
+    public TransitionScreenDisplayer tsd;
 
     [SerializeField]
     public MouseDraw MouseDrawComponent;
@@ -179,11 +180,11 @@ public class ScriptReader : MonoBehaviour
         }
          image.color = new Color(1, 1, 1, 0);
 
-        UpdateNextScript();
     }
 
-    public void UpdateNextScript() 
+    public void UpdateNextScript(bool isWrong) 
     {
+        tsd.UpdateScriptWithIndex(isWrong, indexAnswer);
         indexAnswer++;
         acceptableAnswers = acceptableAnswerArray[indexAnswer];
         indexLine = 0;
@@ -200,8 +201,9 @@ public class ScriptReader : MonoBehaviour
         {   
             string noWhiteSpace = inputField.text.Replace(" ", string.Empty);
             if (acceptableAnswers.Contains(noWhiteSpace.ToLower())) 
-            {                
-                StartCoroutine(FadeImage());
+            {           
+                UpdateNextScript(false);     
+                // StartCoroutine(FadeImage());
             }
             inputField.text = "";
         }

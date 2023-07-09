@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
         } 
         else 
         {
-            scriptReader.UpdateNextScript();
+            scriptReader.UpdateNextScript(true);
         }
     }
 
