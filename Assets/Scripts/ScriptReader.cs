@@ -129,7 +129,7 @@ public class ScriptReader : MonoBehaviour
 
     public string[][] acceptableAnswerArray = new string[][] 
     {
-        new string[] {"smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
+        new string[] {"smileyface", "smiley", "smily", "smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
         new string[] {"pacman", "pac-man"},
         new string[] {"mushroom", "toadstool", "toad", "shroom", "fungus", "muffin", "1up", "oneup"},
         new string[] {"cat", "kitten", "kitty", "yuumi"},
@@ -192,7 +192,7 @@ public class ScriptReader : MonoBehaviour
         lines = scriptLines[indexScript];
         textComponent.text = lines[indexLine];
         MouseDrawComponent.ClearTexture();
-        timer.time = 120f;
+        timer.time = 125f;
     }
 
     void Update()
