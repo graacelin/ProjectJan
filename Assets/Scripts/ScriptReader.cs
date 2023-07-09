@@ -12,10 +12,10 @@ public class ScriptReader : MonoBehaviour
     public TextMeshProUGUI textComponent;
 
     [SerializeField]
-    private MouseDraw MouseDrawComponent;
+    public MouseDraw MouseDrawComponent;
     
     public float textSpeed;
-    private string[][] scriptLines = new string[][] 
+    public string[][] scriptLines = new string[][] 
     {   new string[] 
         {
             "Start off by picking a colour from the options in the bottom left. When you're ready hit the right arrow key on your keyboard to view the next step!",
@@ -113,19 +113,19 @@ public class ScriptReader : MonoBehaviour
             "Thank you for dining with us! I will return once you've decided what you'll be having tonight."
         }
     };
-    private string[] lines;
+    public string[] lines;
     public int indexScript;
     public int indexLine;
 
     [SerializeField]
-    private InputField inputField; 
+    public InputField inputField; 
 
     [SerializeField]
-    private Image image;
+    public Image image;
 
-    private string input; 
+    public string input; 
 
-    private string[][] acceptableAnswerArray = new string[][] 
+    public string[][] acceptableAnswerArray = new string[][] 
     {
         new string[] {"smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
         new string[] {"pacman", "pac-man"},
@@ -140,7 +140,7 @@ public class ScriptReader : MonoBehaviour
         new string[] {"turtle", "seaturtle", "tortoise", "squirtle"}
     };
 
-    private string[] acceptableAnswers;
+    public string[] acceptableAnswers;
     public int indexAnswer;
 
     void Start()
@@ -180,7 +180,7 @@ public class ScriptReader : MonoBehaviour
         UpdateNextScript();
     }
 
-    private void UpdateNextScript() 
+    public void UpdateNextScript() 
     {
         indexAnswer++;
         acceptableAnswers = acceptableAnswerArray[indexAnswer];
