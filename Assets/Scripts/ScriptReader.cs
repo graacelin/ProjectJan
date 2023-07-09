@@ -12,18 +12,17 @@ public class ScriptReader : MonoBehaviour
     public TextMeshProUGUI textComponent;
 
     [SerializeField]
-    public MouseDraw MouseDrawComponent;
+    private MouseDraw MouseDrawComponent;
     
     public float textSpeed;
-    public string[][] scriptLines = new string[][] 
+    private string[][] scriptLines = new string[][] 
     {   new string[] 
         {
-            "Start off by picking a colour from the options in the bottom left. ", 
-            "When you're ready hit the right arrow key on your keyboard to view the next step!",
-            "You can hit the left arrow key to go back a step. Let's draw a circle in the middle of your canvas.",
+            "Start off by picking a colour from the options in the bottom left. When you're ready hit the right arrow key on your keyboard to view the next step!",
+            "You can hit the left arrow key to go back a step. Let's draw a circle in the middle of your canvas. Watch out for that timer! If it runs out, you're done!",
             "Then, draw a right-ward facing arrow in the middle of the circle, like a greater-than sign!",
-            "Above the arrow, to both the left and the right of it, draw two small vertical lines.",
-            "Below the arrow, draw a wide 'U' shape. If you mess up, make sure to use the eraser tool!",
+            "Above the arrow, to both the left and the right of it, draw two small vertical lines within the circle.",
+            "Below the arrow, draw a wide 'U' shape. If you mess up you can erase with the eraser tool or with the clear all button in the top right",
             "Now, write down what you've drawn in the textbox below!"
         },
         new string[] 
@@ -36,7 +35,7 @@ public class ScriptReader : MonoBehaviour
         {
             "Hey there champ, thanks for spending some time with your old man. Let's put a square in the center of the page, like we used to.", 
             "Your pops likes to keep it simple, so let's just add a horizontal line right on top of that square, like the shelf I put up for your mom way back when.",
-            "I always get up early, so let's add a semi-circle on-top of the shelf from one end to the other so it looks like a sunrise.",
+            "I always get up early, so let's add a semi-circle on top of the shelf from one end to the other so it looks like a sunrise.",
             "Your mom was a big fan of polka dots, so we gotta add some small circles inside that semi-circle. She woulda loved that.",
             "Thanks for spending time with me, kiddo. We don't have many moments like these nowadays. You're a good kid."
         },
@@ -52,26 +51,26 @@ public class ScriptReader : MonoBehaviour
         },
         new string[] 
         {
-            "I'm gonna have you fixin' up a great drawin' in no time pardner. First draw me a rectangular pen for my horse.",
-            "Put one of them big ol' triangles on top, like the head of one of my huntin' arrows.",
-            "Add a lil' vertical rectangle inside the pen. Make sure it's touchin' the bottom side.",
-            "Hey, that almost looks like a mouth. Y'all gotta add some square eyes now.",
+            "I'm gonna have you fixin' up a great drawin' in no time, pardner! First draw me a rectangular perimeter for my horse pen.",
+            "Put one of them big ol' triangles on top, from end to end.",
+            "Add a li'l vertical rectangle inside the pen. Make sure it's touchin' the bottom side.",
+            "Hey, that almost looks like a mouth. Y'all oughta add some square eyes in that pen now.",
             "I like to use haybales for target practice, so let's put a cross-shaped target in each of those eyes.",
             "And we're done before high noon! Thanks for the help, buckaroo."
         },
         new string[] 
         {
             "Hey, my boss has me on a tight deadline here, so let's make this quick. Draw a long rectangle on your page, like a bill.",
-            "You can't make dollars if you don't make cents - Add two circular coins on the bottom of the rectangle, close to each corner.",
-            "I'm gonna set my coffee on top of this bill so it doesn't fly away, so there's now a quarter circle in the top right corner.",
+            "You can't make dollars if you don't make cents - add two circular coins on the bottom of the rectangle, close to each corner.",
+            "I'm gonna set my mug on top of this bill so it doesn't fly away. Shoot, now there's a stain in the top right corner!",
             "Gotta make some notes on your performance, so I'll put some sticky notes in a line along my bill here.",
             "Are we done here? My boss will fire me if I miss my next meeting."
         },
         new string[] 
         {
-           "Hey you, make sure you have your hard hat on! Can't you see the big, rectangular steel beam stood up in the middle of the page?",
+           "Hey you, make sure you have your hard hat on! Can't you see the rectangular steel beam in the middle of the page?",
            "We gotta have something to build on, so draw a horizontal platform on top of that beam.",
-           "Arches are structurally sound, so put an arch on top of the left side of that platform, facing inward.",
+           "Arches are structurally sound, so put an arch on top of the left side of that platform.",
            "Gotta support that arch, so add an L-beam from the top of that arch to the other end of the platform. That's a line to the right, then a line down.",
            "A flag will let us know which way the wind is blowing, so put one right above the arch.",
            "Let's add the finishing touches - put any three-digit number between the arch and the end of your L-Beam.",
@@ -80,10 +79,10 @@ public class ScriptReader : MonoBehaviour
         new string[] 
         {
             "Alright campers! Let's get this tent pitched by drawing two diagonal lines that touch at the top. Make sure it's close to the ground.",
-            "Now we gotta keep the animals out. Draw an anti-bear circle around the bottom of your tent!",
-            "Here at Camp Dictionary, we always put two circular rocks touching the south-east and south-west ends of our anti-bear circle for good luck!",
+            "Now we gotta keep the animals out. Draw an oval-shaped perimeter around the bottom of your tent!",
+            "Here at Camp Dictionary, we always put two circular rocks touching the south-east and south-west ends of our perimeter for good luck!",
             "Who's playing with a flashlight in the tent? I can see a long vertical line coming right out from the top of the tent!",
-            "Oh wow, that light's hitting the full-moon. Draw the moon at the end of that line.",
+            "Oh wow, that light's hitting the full moon. Draw the moon at the end of that line.",
             "Darn, those flat clouds are right in the way. They're forming a horizontal line right between our tent and the moon.",
             "Have a great sleep, campers - I don't wanna see anyone on their phones tonight!"
         },
@@ -97,40 +96,40 @@ public class ScriptReader : MonoBehaviour
         new string[] 
         {
             "Hey, thanks for helping me set up the party tonight! Let's draw a rectangular table down the middle of the page.",
-            "Huh, I only have triangular chairs. That's fine, I'll put two of them near the bottom of the table on opposite sides with the tips facing away from the table.",
+            "Huh, I only have triangular chairs. That's fine, I'll put two of them near the bottom of the table on opposite sides with the tips facing away from the table. Make sure to tuck them in!",
             "Oh, right, we have more guests than that. Let's put another triangular chair at the top of the table as well.",
-            "I have some wavy streamers too! Let's attach them to the end of the table without a chair.",
+            "I have some wavy streamers too! Let's attach them at the bottom of the table.",
             "Oh, everyone's almost here, let's put out a circular bowl near the top of the table so that I can put some chips in later.",
             "Thanks for helping me set-up! Let's have a rocking party!"
         },
         new string[] 
         {
-            "Let me seat you at your table, monsieur. It's the big circle in the center of your page.",
+            "Let me seat you at your table, mes amis. It's the big circle in the center of your page.",
             "A table for four? I see. I've tucked in four circular chairs around the table, equally spaced.",
             "Pardon me, I forgot to put the checkered tablecloth on top of the table.",
             "Oh, you have another guest coming. That's no problem, I'll put one more chair between two of the chairs.",
-            "My apologies, but there appears to be two circular stains next to each other near the edge on that last chair. We are deeply sorry.",
+            "My apologies, but there appears to be two circular stains on that last chair. We are deeply sorry.",
             "Oh, you have one more guest? That's fine, but we only have triangular chairs left. I'll put one on the opposite side from the last chair.",
             "Thank you for dining with us! I will return once you've decided what you'll be having tonight."
         }
     };
-    public string[] lines;
+    private string[] lines;
     public int indexScript;
     public int indexLine;
 
     [SerializeField]
-    public InputField inputField; 
+    private InputField inputField; 
 
     [SerializeField]
-    public Image image;
+    private Image image;
 
-    public string input; 
+    private string input; 
 
-    public string[][] acceptableAnswerArray = new string[][] 
+    private string[][] acceptableAnswerArray = new string[][] 
     {
         new string[] {"smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
         new string[] {"pacman", "pac-man"},
-        new string[] {"mushroom", "toadstool", "toad", "shroom", "fungus"},
+        new string[] {"mushroom", "toadstool", "toad", "shroom", "fungus", "muffin", "1up", "oneup"},
         new string[] {"cat", "kitten", "kitty", "yuumi"},
         new string[] {"house", "home", "building"},
         new string[] {"bus", "schoolbus", "citybus", "transitbus"},
@@ -141,7 +140,7 @@ public class ScriptReader : MonoBehaviour
         new string[] {"turtle", "seaturtle", "tortoise", "squirtle"}
     };
 
-    public string[] acceptableAnswers;
+    private string[] acceptableAnswers;
     public int indexAnswer;
 
     void Start()
@@ -161,28 +160,27 @@ public class ScriptReader : MonoBehaviour
         for (float i = 0; i <=0.2f; i += Time.deltaTime)
         {
             // set color with i as alpha
-            image.color = new Color(255, 255, 255, i * 5);
+            image.color = new Color(1, 1, 1, i * 5);
             yield return null;
         }
 
         for (float i = 0; i <=0.5f; i += Time.deltaTime)
         {
-            image.color = new Color(255, 255, 255, 1);
+            image.color = new Color(1, 1, 1, 1);
             yield return null;
         }
 
         for (float i = 0.2f; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
-            image.color = new Color(255, 255, 255, i * 5);
+            image.color = new Color(1, 1, 1, i * 5);
             yield return null;
         }
 
-        image.color = new Color(255, 255, 255, 0);
         UpdateNextScript();
     }
 
-    public void UpdateNextScript() 
+    private void UpdateNextScript() 
     {
         indexAnswer++;
         acceptableAnswers = acceptableAnswerArray[indexAnswer];
