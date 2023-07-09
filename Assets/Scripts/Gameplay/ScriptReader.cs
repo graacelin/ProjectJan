@@ -1,4 +1,4 @@
-﻿﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +12,7 @@ public class ScriptReader : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public Timer timer;
     public TransitionScreenDisplayer tsd;
+    public BunnyOutfitter bunny;
 
     [SerializeField]
     public MouseDraw MouseDrawComponent;
@@ -190,6 +191,7 @@ public class ScriptReader : MonoBehaviour
             return;
         }
         indexAnswer++;
+        bunny.UpdateAccessoryWithIndex(indexAnswer);
         acceptableAnswers = acceptableAnswerArray[indexAnswer];
         indexLine = 0;
         indexScript++;
@@ -206,8 +208,11 @@ public class ScriptReader : MonoBehaviour
             string noWhiteSpace = inputField.text.Replace(" ", string.Empty);
             if (acceptableAnswers.Contains(noWhiteSpace.ToLower())) 
             {           
-                UpdateNextScript(false);     
-                // StartCoroutine(FadeImage());
+                UpdateNextScript(false);    
+            }
+            else 
+            {
+                StartCoroutine(FadeImage());
             }
             inputField.text = "";
         }
