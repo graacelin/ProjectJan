@@ -11,6 +11,7 @@ public class ScriptReader : MonoBehaviour
 
     public TextMeshProUGUI textComponent;
     public Timer timer;
+    public TransitionScreenDisplayer tsd;
 
     [SerializeField]
     public MouseDraw MouseDrawComponent;
@@ -128,7 +129,7 @@ public class ScriptReader : MonoBehaviour
 
     public string[][] acceptableAnswerArray = new string[][] 
     {
-        new string[] {"smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
+        new string[] {"smileyface", "smiley", "smily", "smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
         new string[] {"pacman", "pac-man"},
         new string[] {"mushroom", "toadstool", "toad", "shroom", "fungus", "muffin", "1up", "oneup"},
         new string[] {"cat", "kitten", "kitty", "yuumi"},
@@ -179,11 +180,11 @@ public class ScriptReader : MonoBehaviour
         }
          image.color = new Color(1, 1, 1, 0);
 
-        UpdateNextScript();
     }
 
-    public void UpdateNextScript() 
+    public void UpdateNextScript(bool isWrong) 
     {
+        tsd.UpdateScriptWithIndex(isWrong, indexAnswer);
         indexAnswer++;
         acceptableAnswers = acceptableAnswerArray[indexAnswer];
         indexLine = 0;
@@ -191,7 +192,7 @@ public class ScriptReader : MonoBehaviour
         lines = scriptLines[indexScript];
         textComponent.text = lines[indexLine];
         MouseDrawComponent.ClearTexture();
-        timer.time = 120f;
+        timer.time = 125f;
     }
 
     void Update()
@@ -200,8 +201,9 @@ public class ScriptReader : MonoBehaviour
         {   
             string noWhiteSpace = inputField.text.Replace(" ", string.Empty);
             if (acceptableAnswers.Contains(noWhiteSpace.ToLower())) 
-            {                
-                StartCoroutine(FadeImage());
+            {           
+                UpdateNextScript(false);     
+                // StartCoroutine(FadeImage());
             }
             inputField.text = "";
         }

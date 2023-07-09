@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        time = 120f;
+        time = 125f;
         multiplierFactor = 1f / timeLimit;
         timer.fillAmount = time * multiplierFactor;
         startTimer = true;
@@ -37,7 +37,7 @@ public class Timer : MonoBehaviour
         } 
         else 
         {
-            scriptReader.UpdateNextScript();
+            scriptReader.UpdateNextScript(true);
         }
     }
 

@@ -2465,6 +2465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 719853518}
   timer: {fileID: 1379877119}
+  tsd: {fileID: 228830257}
   MouseDrawComponent: {fileID: 1949977093}
   textSpeed: 0
   lines: []

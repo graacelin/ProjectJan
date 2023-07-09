@@ -82,12 +82,31 @@ public class TransitionScreenDisplayer : MonoBehaviour
     {
         image.sprite = images[2];
         StartCoroutine(FadeImage());
+    }
+
+    public void UpdateScriptWithIndex(bool isWrong, int index)
+    {   
+        int intWrong = isWrong ? 1 : 0;
+        image.sprite = images[index * 3 + intWrong];
+        StartCoroutine(FadeEndScreen(index));
         
+    }
+
+    IEnumerator FadeEndScreen(int index)
+    {
+        for (float i = 0; i <=2f; i += Time.deltaTime)
+        {
+            image.color = new Color(255, 255, 255, 1);
+            yield return null;
+        }
+
+        image.sprite = images[(index + 2) * 3 - 1];
+        StartCoroutine(FadeImage());
     }
 
     IEnumerator FadeImage()
     {
-        for (float i = 0; i <=2f; i += Time.deltaTime)
+        for (float i = 0; i <=3f; i += Time.deltaTime)
         {
             image.color = new Color(255, 255, 255, 1);
             yield return null;
