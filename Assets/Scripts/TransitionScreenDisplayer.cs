@@ -122,9 +122,4 @@ public class TransitionScreenDisplayer : MonoBehaviour
         image.color = new Color(255, 255, 255, 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
