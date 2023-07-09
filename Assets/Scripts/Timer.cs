@@ -7,17 +7,17 @@ public class Timer : MonoBehaviour
 {
 
     public Image timer;
-    public float timeLimit = 60f;
+    public float timeLimit = 120f;
     [SerializeField]
     public ScriptReader scriptReader;
 
-    float time;
+    public float time;
     bool startTimer;
     float multiplierFactor;
     // Start is called before the first frame update
     void Start()
     {
-        time = 60f;
+        time = 120f;
         multiplierFactor = 1f / timeLimit;
         timer.fillAmount = time * multiplierFactor;
         startTimer = true;
@@ -38,7 +38,6 @@ public class Timer : MonoBehaviour
         else 
         {
             scriptReader.UpdateNextScript();
-            time = 60f;
         }
     }
 
