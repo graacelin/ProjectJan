@@ -2256,6 +2256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 719853518}
+  timer: {fileID: 1379877119}
   MouseDrawComponent: {fileID: 1949977093}
   textSpeed: 0
   lines: []
@@ -5640,8 +5641,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 1379877117}
-  timeLimit: 60
+  timeLimit: 120
   scriptReader: {fileID: 554621576}
+  time: 0
 --- !u!1 &1432783834
 GameObject:
   m_ObjectHideFlags: 0

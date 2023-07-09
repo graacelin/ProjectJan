@@ -10,6 +10,7 @@ public class ScriptReader : MonoBehaviour
 {
 
     public TextMeshProUGUI textComponent;
+    public Timer timer;
 
     [SerializeField]
     public MouseDraw MouseDrawComponent;
@@ -176,6 +177,7 @@ public class ScriptReader : MonoBehaviour
             image.color = new Color(1, 1, 1, i * 5);
             yield return null;
         }
+         image.color = new Color(1, 1, 1, 0);
 
         UpdateNextScript();
     }
@@ -189,6 +191,7 @@ public class ScriptReader : MonoBehaviour
         lines = scriptLines[indexScript];
         textComponent.text = lines[indexLine];
         MouseDrawComponent.ClearTexture();
+        timer.time = 120f;
     }
 
     void Update()
