@@ -232,6 +232,4 @@ public class ScriptReader : MonoBehaviour
             textComponent.text = lines[indexLine];
         }
     }
-
-
 }
