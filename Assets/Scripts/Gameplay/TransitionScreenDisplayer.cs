@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TransitionScreenDisplayer : MonoBehaviour
 {
@@ -90,19 +91,29 @@ public class TransitionScreenDisplayer : MonoBehaviour
         int intWrong = isWrong ? 1 : 0;
         image.sprite = images[index * 3 + intWrong];
         StartCoroutine(FadeEndScreen(index));
+       
         
     }
 
     IEnumerator FadeEndScreen(int index)
     {
+        
         for (float i = 0; i <=2f; i += Time.deltaTime)
         {
             image.color = new Color(255, 255, 255, 1);
             yield return null;
         }
-
-        image.sprite = images[(index + 2) * 3 - 1];
-        StartCoroutine(FadeImage());
+        if (index >= (images.Length / 3 - 1))
+        {
+            LoadCredits();
+        } 
+        else 
+        {
+            image.sprite = images[(index + 2) * 3 - 1];
+            StartCoroutine(FadeImage());    
+        }
+        
+        
     }
 
     IEnumerator FadeImage()
@@ -122,6 +133,12 @@ public class TransitionScreenDisplayer : MonoBehaviour
 
         image.color = new Color(255, 255, 255, 0);
     }
+
+    void LoadCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
 
     // Update is called once per frame
     void Update()

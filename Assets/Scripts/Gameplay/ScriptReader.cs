@@ -185,6 +185,10 @@ public class ScriptReader : MonoBehaviour
     public void UpdateNextScript(bool isWrong) 
     {
         tsd.UpdateScriptWithIndex(isWrong, indexAnswer);
+        if (indexAnswer >= acceptableAnswerArray.Length - 1) 
+        {
+            return;
+        }
         indexAnswer++;
         acceptableAnswers = acceptableAnswerArray[indexAnswer];
         indexLine = 0;
