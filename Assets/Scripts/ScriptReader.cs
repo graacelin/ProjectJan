@@ -69,7 +69,7 @@ public class ScriptReader : MonoBehaviour
         },
         new string[] 
         {
-           "Hey you, make sure you have your hard hat on! Can't you see the rectangular steel beam in the middle of the page?",
+           "Hey you, make sure you have your hard hat on! Can't you see the vertical steel beam in the middle of the page?",
            "We gotta have something to build on, so draw a horizontal platform on top of that beam.",
            "Arches are structurally sound, so put an arch on top of the left side of that platform.",
            "Gotta support that arch, so add an L-beam from the top of that arch to the other end of the platform. That's a line to the right, then a line down.",
@@ -135,7 +135,7 @@ public class ScriptReader : MonoBehaviour
         new string[] {"house", "home", "building"},
         new string[] {"bus", "schoolbus", "citybus", "transitbus"},
         new string[] {"mailbox", "postbox", "pobox", "p.o.box"},
-        new string[] {"skateboarder", "skateboarding", "tonyhawk", "skateboard"},
+        new string[] {"skateboarder", "skateboarding", "tonyhawk", "skateboard", "skater", "skaterboi"},
         new string[] {"fidgetspinner", "fidgettoy", "fidget", "toy"},
         new string[] {"rocket", "rocketship", "spaceship"},
         new string[] {"turtle", "seaturtle", "tortoise", "squirtle"}
