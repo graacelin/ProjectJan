@@ -161,23 +161,24 @@ public class ScriptReader : MonoBehaviour
         for (float i = 0; i <=0.2f; i += Time.deltaTime)
         {
             // set color with i as alpha
-            image.color = new Color(1, 1, 1, i * 5);
+            image.color = new Color(255, 255, 255, i * 5);
             yield return null;
         }
 
         for (float i = 0; i <=0.5f; i += Time.deltaTime)
         {
-            image.color = new Color(1, 1, 1, 1);
+            image.color = new Color(255, 255, 255, 1);
             yield return null;
         }
 
         for (float i = 0.2f; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
-            image.color = new Color(1, 1, 1, i * 5);
+            image.color = new Color(255, 255, 255, i * 5);
             yield return null;
         }
 
+        image.color = new Color(255, 255, 255, 0);
         UpdateNextScript();
     }
 

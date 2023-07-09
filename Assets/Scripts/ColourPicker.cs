@@ -13,7 +13,7 @@ public class ColourPicker : MonoBehaviour
     private MouseDraw MouseDrawComponent;
 
     [SerializeField]
-    private Button redButton, orangeButton, yellowButton, greenButton, blueButton, magentaButton, blackButton;
+    private Button redButton, orangeButton, yellowButton, greenButton, blueButton, magentaButton, blackButton, clearButton;
 
     [SerializeField]
     private Toggle eraser;
@@ -22,7 +22,7 @@ public class ColourPicker : MonoBehaviour
     void Start()
     {
         MouseDrawComponent.SetPenColour(Color.red);
-         MouseDrawComponent.SetPenRadius(2);
+        MouseDrawComponent.SetPenRadius(2);
         redButton.onClick.AddListener(OnRedPressed);
         orangeButton.onClick.AddListener(OnOrangePressed);
         yellowButton.onClick.AddListener(OnYellowPressed);
@@ -31,7 +31,7 @@ public class ColourPicker : MonoBehaviour
         magentaButton.onClick.AddListener(OnMagentaPressed);
         blackButton.onClick.AddListener(OnBlackPressed);
         eraser.onValueChanged.AddListener(OnEraserToggled);
-
+        clearButton.onClick.AddListener(OnClearPressed);
     }
 
     // Update is called once per frame
@@ -47,36 +47,55 @@ public class ColourPicker : MonoBehaviour
     private void OnRedPressed()
     {
         MouseDrawComponent.SetPenColour(Color.red);
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
     }
 
     private void OnOrangePressed()
     {
         MouseDrawComponent.SetPenColour(new Color32(255, 160, 0, 255));
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
     }
 
     private void OnYellowPressed()
     {
         MouseDrawComponent.SetPenColour(Color.yellow);
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
     }
 
     private void OnGreenPressed()
     {
         MouseDrawComponent.SetPenColour(Color.green);
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
     }
 
     private void OnBluePressed()
     {
         MouseDrawComponent.SetPenColour(Color.blue);
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
     }
 
     private void OnMagentaPressed()
     {
         MouseDrawComponent.SetPenColour(Color.magenta);
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
     }
 
-        private void OnBlackPressed()
+    private void OnBlackPressed()
     {
         MouseDrawComponent.SetPenColour(Color.black);
+        eraser.SetIsOnWithoutNotify(false); 
+        MouseDrawComponent.SetIsEraser(false);
+    }
+
+    private void OnClearPressed()
+    {
+        MouseDrawComponent.ClearTexture();
     }
 
 
