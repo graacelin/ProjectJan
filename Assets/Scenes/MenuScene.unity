@@ -1259,7 +1259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c5eb782dea6f446bb3e25dffedd043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundPlayer: {fileID: 0}
+  soundPlayer: {fileID: 1388052721}
+  exitDelay: 0.3
 --- !u!114 &1291894965
 MonoBehaviour:
   m_ObjectHideFlags: 0
