@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1388052720}
   - component: {fileID: 1388052721}
   m_Layer: 5
-  m_Name: ExitAudioSource
+  m_Name: ExitAS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1793,7 +1793,7 @@ GameObject:
   - component: {fileID: 2061349554}
   - component: {fileID: 2061349553}
   m_Layer: 5
-  m_Name: StartAudioSource
+  m_Name: StartAS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
