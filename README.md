@@ -9,7 +9,7 @@ Descriptionary is like a classic drawing board game, but the roles are reversed;
 
 Join our bunny-themed cast featuring a wide variety of characters who all need your help! Try to navigate their individual mannerisms in order to depict what they’re trying to describe, all under a time limit.
 
-### Controls: 
+## Controls: 
 ![title](./Assets/Art/Previews/gameplay.png)
 - Choose a colour from the bottom-left corner of the screen, then click and drag your mouse along the canvas to draw. 
 - If you make a mistake, just use the eraser tool next to the colours, or restart entirely using the clear tool in the top-right corner of your canvas. 
@@ -18,7 +18,7 @@ Join our bunny-themed cast featuring a wide variety of characters who all need y
 - If you’re right, you win! If you’re wrong, you can keep guessing until the timer runs out. 
 - If you run out of time, you can carry on to the next level -  anybunny can beat this game!
 
-### Credits:
+## Credits:
 Programmers: Momo, Ryn
 
 Game Designer: Kamii
@@ -30,3 +30,5 @@ Artist: Cali
 Additional Support: Dirt, Chorby, Egg, YoloNinja, Colin, Robbity 
 
 Music From: DDBY, Akito Bass
+
+![title](./Assets/Art/Previews/we%20broke.png)
