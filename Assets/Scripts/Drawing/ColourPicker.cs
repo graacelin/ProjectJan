@@ -22,7 +22,7 @@ public class ColourPicker : MonoBehaviour
     void Start()
     {
         MouseDrawComponent.SetPenColour(Color.red);
-        MouseDrawComponent.SetPenRadius(2);
+        MouseDrawComponent.SetPenRadius(4);
         redButton.onClick.AddListener(OnRedPressed);
         orangeButton.onClick.AddListener(OnOrangePressed);
         yellowButton.onClick.AddListener(OnYellowPressed);

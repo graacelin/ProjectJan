@@ -89,7 +89,7 @@ public class MouseDraw : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         // Set scale Factor...
         m_scaleFactor = HostCanvas.scaleFactor * 2;
 
-        var tex = new Texture2D(Convert.ToInt32(Screen.width/m_scaleFactor), Convert.ToInt32(Screen.height/m_scaleFactor));
+        var tex = new Texture2D(Convert.ToInt32(Screen.width), Convert.ToInt32(Screen.height));
         for (int i = 0; i < tex.width; i++)
         {
             for (int j = 0; j < tex.height; j++)
@@ -110,18 +110,17 @@ public class MouseDraw : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {  
 
         //pos = Camera.main.ScreenToWorldPoint(pos);
-
-        pos /= m_scaleFactor;
+        SetPenRadius(Convert.ToInt32(Screen.width) * 4 / 1600);
         var mainTex = m_image.texture;
-        var tex2d = new Texture2D(mainTex.width, mainTex.height, TextureFormat.RGBA32, false);
+        var tex2d = new Texture2D(Convert.ToInt32(Screen.width), Convert.ToInt32(Screen.height), TextureFormat.RGBA32, false);
 
         var curTex = RenderTexture.active;
-        var renTex = new RenderTexture(mainTex.width, mainTex.height, 32);
+        var renTex = new RenderTexture(Convert.ToInt32(Screen.width), Convert.ToInt32(Screen.height), 32);
 
         Graphics.Blit(mainTex, renTex);
         RenderTexture.active = renTex;
 
-        tex2d.ReadPixels(new Rect(0, 0, mainTex.width, mainTex.height), 0, 0);
+        tex2d.ReadPixels(new Rect(0, 0, Convert.ToInt32(Screen.width), Convert.ToInt32(Screen.height)), 0, 0);
 
         var col = IsEraser ? backgroundColour : penColour;
 
@@ -131,7 +130,7 @@ public class MouseDraw : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         foreach (var position in positions)
         {
-            var pixels = GetNeighbouringPixels(new Vector2(mainTex.width, mainTex.height), position, rad);
+            var pixels = GetNeighbouringPixels(new Vector2(Convert.ToInt32(Screen.width), Convert.ToInt32(Screen.height)), position, rad);
 
             if (pixels.Count > 0)
                 foreach (var p in pixels)

@@ -130,7 +130,7 @@ public class ScriptReader : MonoBehaviour
 
     public string[][] acceptableAnswerArray = new string[][] 
     {
-        new string[] {"smileyface", "smiley", "smily", "smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)"},
+        new string[] {"smileyface", "smiley", "smily", "smileyface", "smilingface", "smile", "smilyface", "smileemoji", ":)", "face"},
         new string[] {"pacman", "pac-man"},
         new string[] {"mushroom", "toadstool", "toad", "shroom", "fungus", "muffin", "1up", "oneup"},
         new string[] {"cat", "kitten", "kitty", "yuumi"},
