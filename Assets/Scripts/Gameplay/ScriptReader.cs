@@ -13,6 +13,9 @@ public class ScriptReader : MonoBehaviour
     public Timer timer;
     public TransitionScreenDisplayer tsd;
     public BunnyOutfitter bunny;
+    public AudioSource scriptSFX;
+    public AudioSource correctSFX;
+    public AudioSource incorrectSFX;
 
     [SerializeField]
     public MouseDraw MouseDrawComponent;
@@ -207,11 +210,13 @@ public class ScriptReader : MonoBehaviour
         {   
             string noWhiteSpace = inputField.text.Replace(" ", string.Empty);
             if (acceptableAnswers.Contains(noWhiteSpace.ToLower())) 
-            {           
+            {   
+                playSFX(correctSFX);       
                 UpdateNextScript(false);    
             }
             else 
             {
+                playSFX(incorrectSFX);
                 StartCoroutine(FadeImage());
             }
             inputField.text = "";
@@ -219,10 +224,12 @@ public class ScriptReader : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) 
         {
+            playSFX(scriptSFX);
             NextLine(); 
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            playSFX(scriptSFX);
             PreviousLine();
         }
     }
@@ -243,5 +250,10 @@ public class ScriptReader : MonoBehaviour
             indexLine--;
             textComponent.text = lines[indexLine];
         }
+    }
+
+    void playSFX(AudioSource sound)
+    {
+        sound.Play();
     }
 }
